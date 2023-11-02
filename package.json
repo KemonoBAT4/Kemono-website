@@ -2,7 +2,7 @@
   "name": "kemono-website",
   "version": "1.0.0",
   "description": "gives a little introduction, gives some informations like socials, github, mail and personal informations like birth date/place",
-  "main": "index.js",
+  "main": "start.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon start.js"
