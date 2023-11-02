@@ -2,7 +2,6 @@ const express = require("express");
 const app = express();
 const port = 5000;
 
-const pageRoutes = require(".src/routes/routes");
 
 //Static files
 app.use(express.static("public"));
@@ -17,9 +16,10 @@ app.set("views", "./src/views/pages");
 app.set("view engine", "ejs");
 
 
+const pageRouter = require("./src/routes/router");
 //Routes
-app.use("/", pageRoutes);
-app.use("/home", pageRoutes);
+app.use("/", pageRouter);
+app.use("/home", pageRouter);
 
 //Listen on port 5000
 app.listen(process.env.PORT || port,  () => console.log(`Listening on port ${port}`));
