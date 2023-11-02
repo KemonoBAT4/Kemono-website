@@ -5,8 +5,10 @@ const port = 5000;
 
 //Static files
 app.use(express.static("public"));
-//FIXME: fix this line
-//app.use("/bootstrap", express.static(path.join(__dirname, "node_modules/bootstrap/dist/")));
+
+//TODO: check if this lines is correct
+//app.use("/",express.static("./node_modules/bootstrap/dist/"));
+app.use("/bootstrap", express.static("./node_modules/bootstrap/dist/css"));
 app.use("/css", express.static(__dirname + "public/css"));
 app.use("/js", express.static(__dirname + "public/js"));
 app.use("/img", express.static(__dirname + "public/img"));
