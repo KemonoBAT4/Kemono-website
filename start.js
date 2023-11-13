@@ -2,7 +2,6 @@ const express = require("express");
 const app = express();
 const port = 5000;
 
-
 //Static files
 app.use(express.static("public"));
 
@@ -11,7 +10,7 @@ app.use(express.static("public"));
 app.use("/bootstrap", express.static("./node_modules/bootstrap/dist/css"));
 app.use("/css", express.static(__dirname + "public/css"));
 app.use("/js", express.static(__dirname + "public/js"));
-app.use("/img", express.static(__dirname + "public/img"));
+app.use("/imgs", express.static(__dirname + "public/imgs"));
 app.use("/json", express.static(__dirname + "public/json"));
 
 app.set("views", "./src/views/pages");
