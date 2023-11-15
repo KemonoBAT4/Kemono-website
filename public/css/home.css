@@ -4,3 +4,43 @@
     margin-left: 0.20%;
 }
 
+/*
+##########
+# HEADER #
+##########
+*/
+
+.header-bar {
+    display: flex;
+    flex-direction: row;
+    height: 90px;
+}
+
+.page-data-container {
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    height: auto;
+}
+
+.page-search-container {
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    height: auto;
+}
+
+/*
+########
+# MAIN #
+########
+*/
+
+.main-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+
+
