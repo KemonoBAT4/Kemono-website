@@ -5,31 +5,79 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="/css/home.css">
         <link rel="stylesheet" href="/bootstrap/bootstrap.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
         <title>Home page</title>
     </head>
     <body>
-        <header class="header-bar">
+        <div class="header-bar">
             <div class="page-data-container">
-                <!-- <h1 id="title">Page Title</h1> -->
+                <h1 class="title">Page Title</h1>
             </div>
 
             <div class="page-search-container">
-                <!-- <input type="text" id="input">
-                <button id="searh-button">
-                    Search
-                </button> -->
+                <div class="search-sub-container">
+                    <form action="">
+                        <input type="text" class="form-control" style="width: 300px;" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                        <button type="button" class="btn btn-dark" id="search-button">
+                            Search
+                        </button>
+                    </form>
+                </div>
             </div>
-        </header>
+        </div>
 
-        <main class="main-container">
+        <div class="main-container">
             <div class="side-bar">
+                <div class="bar-button">
+                    
+                    <button type="button" 
+                        id="side-bar-button" 
+                        class="btn btn-secondary">
+                        <span class="material-symbols-outlined">
+                            home
+                        </span>
 
+                        <span class="button-title">
+                            text 1
+                        </span>
+                    </button>
+                </div>
+
+                <div class="bar-button">
+                    
+                    <button type="button" 
+                        id="side-bar-button" 
+                        class="btn btn-secondary">
+                        <span class="material-symbols-outlined">
+                            stadia_controller
+                        </span>
+
+                        <span class="button-title">
+                            text 2
+                        </span>
+                    </button>
+                </div>
+
+                <div class="bar-button">
+                    
+                    <button type="button" 
+                        id="side-bar-button" 
+                        class="btn btn-secondary">
+                        <span class="material-symbols-outlined">
+                            settings
+                        </span>
+
+                        <span class="button-title">
+                            text 3
+                        </span>
+                    </button>
+                </div>
             </div>
 
             <div class="main-page">
-
+                main page
             </div>
-        </main>
+        </div>
 
         <script src="/js/home.js"></script>
     </body>
