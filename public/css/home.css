@@ -22,7 +22,8 @@
     flex-direction: row;
     height: 70px;
     width: 100%;
-    border-bottom: 5px solid #141313;
+    background-color: rgba(0, 0, 0, 0.7)
+    /* border-bottom: 5px solid #141313; */
 }
 
 .page-data-container {
@@ -31,6 +32,10 @@
     width: 50%;
     height: auto;
     align-items: center;
+}
+
+.title {
+    margin-left: 10px;
 }
 
 .page-search-container {
@@ -57,7 +62,7 @@ form {
 }
 
 #search-button {
-    margin-left: 4px;
+    margin-left: 10px;
     margin-right: 10px;
 }
 
@@ -70,7 +75,9 @@ form {
 }
 
 .bar-button {
-    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 90%;
     display: flex;
     justify-content: center;
     align-items: center;

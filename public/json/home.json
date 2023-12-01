@@ -1,5 +1,8 @@
 {
     "description": "home page settings",
+    "title": "Home page",
+    "url": "/home",
+    
     "animations" : [
         {
             "name": ""

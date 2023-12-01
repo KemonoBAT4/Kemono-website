@@ -12,6 +12,7 @@ pageRouter.get("/", async(req, res) => {
  * renders the home page
  */
 pageRouter.get("/home", async(req, res) => {
+
     res.render("home");
 });
 
@@ -73,6 +74,7 @@ pageRouter.get("/settings", async(req, res) => {
  * renders the 404 page
  */
 pageRouter.get("*", async(req, res) => {
+
     res.render("404");
 });
 

@@ -110,3 +110,6 @@ function to_be_renamed(string){
         console.log(array)
     }
 }  
+
+    console.log("searched")
+})
