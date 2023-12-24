@@ -5,16 +5,21 @@ const { port } = require("./config");
 const cors = require("cors");
 const morgan = require("morgan");
 const { Sequelize } = require("sequelize");
+//const database_ready = false; 
 
 // Express Routes Import
 const pageRouter = require("./src/routes/router");
-const userRoutes = require("./src/database/controllers/users/routes");
-const gameRoutes = require("./src/database/controllers/games/routes");
+
+const userApiRouter = require("./src/database/tables/users/routes");
+//const gameRoutes = require("./src/database/tables/games/routes");
+
+
 //const apiRouter = require("./src/routes/") //TODO: create the folder and finish this line
 
 // Sequelize model imports
 const UserModel = require("./src/database/models/User");
 const NewsModel = require("./src/database/models/News");
+const GameModel = require("./src/database/models/Game");
 
 app.use(morgan("tiny"));
 app.use(cors());
@@ -40,7 +45,7 @@ app.use("/storage", express.static(__dirname + "src/database/storage"));
 app.use("/middlewares", express.static(__dirname + "src/database/middlewares"));
 app.use("/controllers", express.static(__dirname + "src/database/controllers"))
 //app.use("/home", express.static(__dirname));
-console.log(__dirname)
+
 
 // Ejs engine
 app.set("views", "./src/views/pages");
@@ -61,9 +66,11 @@ sequelize.sync().then(() => {
     console.log("Sequelize Initialised!");
 
     // Attacching Routes to the app
+    app.use("/api", userApiRouter);
     app.use("/", pageRouter);
     //app.use("/api", apiRouter); //TODO: add finish to create all the files and stuff for this and then remove the comment
     app.listen(process.env.PORT || port,  () => console.log(`Listening on port ${port}`));
 }).catch((error) => {
-    console.error("Sequelize Initialisation threw an error: ", error)
+
+    console.error("Sequelize Initialisation threw an error: ", error);
 });
