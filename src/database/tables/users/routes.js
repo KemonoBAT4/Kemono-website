@@ -27,7 +27,7 @@ router.patch(
 
 router.get(
   "/users",
-  [isAuthenticatedMiddleware.check, CheckPermissionMiddleware.has(roles.ADMIN)],
+  /*[isAuthenticatedMiddleware.check, CheckPermissionMiddleware.has(roles.ADMIN)],*/
   UserController.getAllUsers
 );
 

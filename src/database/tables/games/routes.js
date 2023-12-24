@@ -1,9 +1,9 @@
 const router = require("express").Router();
 
 // Middleware Imports
-const isAuthenticatedMiddleware = require("/middlewares/IsAuthenticatedMiddleware");
-const SchemaValidationMiddleware = require("/middlewares/SchemaValidationMiddleware");
-const CheckPermissionMiddleware = require("/middlewares/CheckPermissionMiddleware");
+const isAuthenticatedMiddleware = require("../../middlewares/isAuthenticatedMiddleWare");
+const SchemaValidationMiddleware = require("../../middlewares/SchemaValidationMiddleware");
+const CheckPermissionMiddleware = require("../../middlewares/CheckPermissionMiddleware");
 
 // Controller Imports
 const GameController = require("./controllers/GameController");

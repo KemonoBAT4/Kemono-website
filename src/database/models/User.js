@@ -26,6 +26,18 @@ const UserModel = {
         type: DataTypes.STRING,
         allowNull: true,
         unique: true,
+    },
+
+    password: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        unique: false,
+    },
+    
+    role: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        unique: false,
     }
 };
 

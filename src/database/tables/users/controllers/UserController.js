@@ -94,6 +94,16 @@ module.exports = {
           });
         });
     },
+
+    newUser: (req, res) => {
+      const {
+        body: { username, email, password, role },
+      } = req;
+      
+      UserModel.createUser()
+    },
+  
+
   
     changeRole: (req, res) => {
       const {

@@ -25,6 +25,12 @@ const GameModel = {
         type: DataTypes.STRING,
         allowNull: false,
         unique: false,
+    },
+
+    image: {
+        type: DataTypes.BLOB,
+        allowNull: false,
+        unique: false,
     }
 };
 
