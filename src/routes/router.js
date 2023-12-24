@@ -5,6 +5,7 @@ const pageRouter = express.Router();
  * renders the home page
  */
 pageRouter.get("/", async(req, res) => {
+
     res.redirect("/home");
 });
 
@@ -42,10 +43,9 @@ pageRouter.get("/news/article/:id", async(req, res) => {
 
 pageRouter.get("/api/news/recent", async (req, res) => {
 
-})
+});
 
 pageRouter.get("/api/search/:id", async (req, res) => {
-
 
 });
 
@@ -56,10 +56,10 @@ pageRouter.get("/api/search/:id", async (req, res) => {
 
 //TODO: see if this needs to be implemented
 /**
- * the login page if not logged
+ * the account page when creating an account or logging
  */
-pageRouter.get("/login", async(req, res) => {
-    res.render("404");
+pageRouter.get("/account", async(req, res) => {
+    res.redirect("/404");
 });
 
 //TODO: see if this needs to be implemented
@@ -67,7 +67,8 @@ pageRouter.get("/login", async(req, res) => {
  * the settings page
  */
 pageRouter.get("/settings", async(req, res) => {
-    res.render("404");
+
+    res.render("settings");
 });
 
 /**
