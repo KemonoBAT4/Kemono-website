@@ -59,7 +59,7 @@ pageRouter.get("/api/search/:id", async (req, res) => {
  * the account page when creating an account or logging
  */
 pageRouter.get("/account", async(req, res) => {
-    res.redirect("/404");
+    res.render("account");
 });
 
 //TODO: see if this needs to be implemented
