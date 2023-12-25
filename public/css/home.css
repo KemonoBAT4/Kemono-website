@@ -1,14 +1,12 @@
-/*
-########
-# BODY #
-########
-*/
 
 body {
-    background-image: url(/imgs/background-test.jpg);
-    background-repeat: no-repeat;
-    background-position: fixed;
-    background-size: cover;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+.page-container {
+    display: flex;
+    flex-direction: row;
 }
 
 /*
@@ -17,13 +15,19 @@ body {
 ##########
 */
 
+#logo {
+    width: 96%;
+    height: auto;
+    margin-bottom: 4px;
+    border-radius: 4px;
+}
+
 .header-bar {
     display: flex;
     flex-direction: row;
     height: 70px;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.7)
-    /* border-bottom: 5px solid #141313; */
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 .page-data-container {
@@ -59,6 +63,7 @@ body {
 
 form {
     display: flex;
+    flex-direction: row;
 }
 
 #search-button {
@@ -71,8 +76,7 @@ form {
     flex-direction: row;
     align-items: center;
     width: 96%;
-    align-items: center;
-    
+    align-items: center;  
 }
 
 .bar-button {
@@ -82,6 +86,7 @@ form {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 4px;
 }
 
 .button-title {
@@ -96,22 +101,78 @@ form {
 */
 
 .main-container {
-    width: 100%;
+    width: 88%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 }
 
 .side-bar {
-    width: 9%;
-    background-color: rgba(0, 0, 0, 0.7);
-    height: calc(100vh - 70px);
-    align-items: center;
+    width: 12%;
+}
+
+.side-bar-container{
+    width: 100%;
     display: flex;
     flex-direction: column;
-    /* border-bottom: 5px solid #141313;
-    border-right: 5px solid #141313; */
+    height: auto;
+    border-bottom: 5px solid #141313;
+    border-right: 5px solid #141313;
+    align-items: center;
 }
 
 .main-page {
-    width: 91%;
+    width: 100%; 
+    height: 100%;
+    background-color: red;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
+}
+
+.main-page::-webkit-scrollbar {
+    width: 10px;
+}
+
+.main-page::-webkit-scrollbar-thumb {
+    background-color: transparent;
+}
+
+.main-page::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+.main-container-for-games {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.game-container-row{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center; 
+}
+
+.game-container {
+    width: 32.5%;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 10px;
+    height: 300px;
+    border-radius: 8px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-title {
+    background-color: rgba(0,0,0, 0.4);
+    font-weight: bold;
+    width: 80%;
+    text-align: center;
 }

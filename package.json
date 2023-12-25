@@ -18,10 +18,16 @@
   },
   "homepage": "https://github.com/KemonoBAT4/Kemono-website#readme",
   "dependencies": {
+    "ajv": "^8.12.0",
     "bootstrap": "^5.3.2",
+    "cors": "^2.8.5",
     "ejs": "^3.1.9",
     "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
     "material-icons": "^1.13.12",
-    "nodemon": "^3.0.1"
+    "morgan": "^1.10.0",
+    "nodemon": "^3.0.1",
+    "sequelize": "^6.35.1",
+    "sqlite3": "^5.1.6"
   }
 }
