@@ -6,7 +6,6 @@ load_data();
 
 async function search_function(text){
     
-    
     //TODO: finish this function
     if(is_slash_function(text)){
         search_through_slash(text);
@@ -120,6 +119,10 @@ async function load_settings_page(){
     locate_page("settings");
 }
 
+async function load_anime_page(){
+    locate_page("anime");
+}
+
 /**
  * credits page
  */
@@ -136,25 +139,7 @@ function locate_page(text){
     document.location = `/${text}`;
 }
 
-async function fetch_delete(url){
-    
-}
 
-async function fetch_patch(url, body){
-
-}
-
-async function fetch_put(url, body){
-
-}
-
-async function fetch_post(url, body){
-
-}
-
-async function fetch_get(url){
-    return await fetch(url).then(response => { return response.json(); });
-}
 
 function search_through_slash(text){
     //TODO: finish this function
@@ -227,6 +212,11 @@ let games_page_button = document.querySelector("#games-page-button").addEventLis
 let news_page_button = document.querySelector("#news-page-button").addEventListener("click", event => {
     event.preventDefault();
     load_news_page();
+});
+
+let anime_page_button = document.querySelector("#anime-page-button").addEventListener("click", event => {
+    event.preventDefault();
+    load_anime_page();
 });
 
 let settings_page_button = document.querySelector("#settings-page-button").addEventListener("click", event => {
