@@ -1,11 +1,12 @@
+// const { locate_page, fetch_get } = require( '../services/pages_service.js' );
 
 let title = document.querySelector(".title");
 
 load_data();
 
-
 async function search_function(text){
     
+
     //TODO: finish this function
     if(is_slash_function(text)){
         search_through_slash(text);
@@ -23,7 +24,7 @@ async function search_function(text){
 function load_data(){
     let main_page = document.querySelector(".main-page");
     main_page.innerHTML = "";
-    load_games_page();
+    //load_games_page();
 }
 
 //##############
@@ -48,8 +49,9 @@ async function load_games_page(){
     let main_page = document.querySelector(".main-page");
     main_page.innerHTML = "";
     document.title = "Games page";
-
+    
     title.innerText = "Games page";
+    
     //TODO: implement when the api is ready
     //let url = "/api/games/all";
     //let games = await fetch_get(url);
@@ -64,9 +66,9 @@ async function load_games_page(){
     let game4 = { title: "Arknghts", image: "/imgs/arknights_endfield_construction.jpg" }    
     let game5 = { title: "Arknghts: endfield", image: "/imgs/arknights_endfield_construction.jpg" }
     let game6 = { title: "Arknghts", image: "/imgs/arknights_endfield_construction.jpg" }    
-    let game7 = { title: "Arknghts: endfield", image: "/imgs/arknights_endfield_construction.jpg" }
+    // let game7 = { title: "Arknghts: endfield", image: "/imgs/arknights_endfield_construction.jpg" }
 
-    let games = [game1, game2, game3, game4, game5, game6, game7];
+    let games = [game1, game2, game3, game4, game5, game6]; // , game7];
 
     let game_container_row = document.createElement("div");
     game_container_row.className = "game-container-row";
@@ -134,19 +136,100 @@ async function load_credits_page(){
 //# UTILITIES #
 //#############
 
-function locate_page(text){
-    console.log(`/${text}`)
+/**
+ * redirects to the provided path 
+ * @param {string} text the location path 
+ */
+ function locate_page(text) {
+
     document.location = `/${text}`;
 }
 
+//############
+//# FETCHERS #
+//############
 
+/**
+ * makes a delete request to the url provided
+ * @param {string} url the url of the request 
+ * @returns the data
+ */
+async function fetch_delete(url){
+    return await fetch(url, {
+        method: "DELETE",
+        headers: {
+            "Content-type": "application/json"
+        }
+    });
+}
 
+/**
+ * makes a patch request to the url provided
+ * @param {string} url the url of the request
+ * @param {json} body the body in json format 
+ * @returns the data
+ */
+async function fetch_patch(url, body){
+    return await fetch(url, {
+        method: "PATCH",
+        body: body,
+        headers: {
+            "Content-type": "application/json"
+        }
+    });
+}
+
+/**
+ * makes a put request to the url provided
+ * @param {string} url the url of the request
+ * @param {json} body the body in json format
+ * @returns the data
+ */
+async function fetch_put(url, body){
+    return await fetch(url, {
+        method: "PUT",
+        body: body,
+        headers: {
+            "Content-type": "application/json"
+        }
+    });
+}
+
+/**
+ * makes a post request to the url provided
+ * @param {string} url the url of the request
+ * @param {json} body the body in json format
+ * @returns the data
+ */
+async function fetch_post(url, body){
+    return await fetch(url, {
+        method: "POST",
+        body: body,
+        headers: {
+            "Content-type": "application/json"
+        }
+    });
+}
+
+/**
+ * makes a get request to the url provided
+ * @param {string} url the url of the string
+ * @returns the data
+ */
+async function fetch_get(url){
+    return await fetch(url).then(response => { return response.json(); });
+}
+
+/**
+ * 
+ * @param {*} text 
+ */
 function search_through_slash(text){
     //TODO: finish this function
-
+    console.log(text)
     switch(text){
         case "1": console.log("test"); break;
-        case "2": console.log("test"); break;
+        case "2": locate_page("testaaaaa"); break;
         case "3": console.log("test"); break;
         case "4": console.log("test"); break;
         case "5": console.log("test"); break;
@@ -195,6 +278,9 @@ let search_button = document.querySelector("#search-button").addEventListener("c
     event.preventDefault();
     console.log("search button pressed");
 
+    // test
+    test();
+
     let search_text = document.querySelector("#search-text").value;
     search_function(search_text);
 });
@@ -228,3 +314,12 @@ let credits_page_button = document.querySelector("#credits-page-button").addEven
     event.preventDefault(); 
     load_credits_page();
 });
+
+//########
+//# TEST #
+//########
+
+async function test() {
+    console.log("dentro test");
+    console.log(await fetch_get("https://jsonplaceholder.typicode.com/todos/1"));
+}
