@@ -63,10 +63,9 @@ async function load_games_page(){
     let game3 = { title: "Arknghts: endfield", image: "/imgs/arknights_endfield_construction.jpg" }
     let game4 = { title: "Arknghts", image: "/imgs/arknights_endfield_construction.jpg" }    
     let game5 = { title: "Arknghts: endfield", image: "/imgs/arknights_endfield_construction.jpg" }
-    let game6 = { title: "Arknghts", image: "/imgs/arknights_endfield_construction.jpg" }    
-    let game7 = { title: "Arknghts: endfield", image: "/imgs/arknights_endfield_construction.jpg" }
+    let game6 = { title: "Arknghts", image: "/imgs/arknights_endfield_construction.jpg" }
 
-    let games = [game1, game2, game3, game4, game5, game6, game7];
+    let games = [game1, game2, game3, game4, game5, game6];
 
     let game_container_row = document.createElement("div");
     game_container_row.className = "game-container-row";
@@ -110,6 +109,10 @@ async function load_news_page(){
     document.title = "News page";
 
     title.innerText = "News page";
+}
+
+async function load_chat_page(){
+    locate_page("chat");
 }
 
 /**
@@ -222,6 +225,12 @@ let anime_page_button = document.querySelector("#anime-page-button").addEventLis
 let settings_page_button = document.querySelector("#settings-page-button").addEventListener("click", event => {
     event.preventDefault();
     load_settings_page();
+});
+
+let chat_page_button = document.querySelector("#chat-page-button").addEventListener("click", event => {
+    event.preventDefault();
+    console.log("chat")
+    load_chat_page();
 });
 
 let credits_page_button = document.querySelector("#credits-page-button").addEventListener("click", event => {

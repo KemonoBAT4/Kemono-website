@@ -1,10 +1,18 @@
 
 const express = require("express");
+
 const app = express();
 const { port } = require("./config");
 const cors = require("cors");
 const morgan = require("morgan");
 const { Sequelize } = require("sequelize");
+
+// chat data
+const http = require("http");
+const io = require("socket.io")(http);
+
+
+
 //const database_ready = false; 
 
 // Express Routes Import
@@ -46,6 +54,18 @@ app.use("/middlewares", express.static(__dirname + "src/database/middlewares"));
 app.use("/controllers", express.static(__dirname + "src/database/controllers"))
 //app.use("/home", express.static(__dirname));
 
+// socket io usage chat
+io.on("connection", (socket) => {
+    console.log("A user connected");
+
+    socket.on("chat message", (msg) => {
+        io.emit("chat message", msg);
+    });
+
+    socket.on( "disconnect", () => {
+        console.log("A user disconnected");
+    });
+})
 
 // Ejs engine
 app.set("views", "./src/views/pages");
@@ -60,6 +80,8 @@ const sequelize = new Sequelize({
 
 UserModel.initialise(sequelize);
 //NewsModel.initialise(sequelize);
+
+
 
 
 sequelize.sync().then(() => {

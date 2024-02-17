@@ -18,6 +18,14 @@ pageRouter.get("/home", async(req, res) => {
 });
 
 /**
+ * renders the chatlist page
+ */
+pageRouter.get("/chat", async(req, res) => {
+
+    res.render("chat");
+});
+
+/**
  * renders the news page
  */
 pageRouter.get("/news", async(req, res) => {
@@ -46,6 +54,10 @@ pageRouter.get("/api/news/recent", async (req, res) => {
 });
 
 pageRouter.get("/api/search/:id", async (req, res) => {
+
+});
+
+pageRouter.get("/api/chat/:uid", async (req, res) => {
 
 });
 
