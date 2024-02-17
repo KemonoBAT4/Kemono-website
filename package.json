@@ -28,6 +28,7 @@
     "morgan": "^1.10.0",
     "nodemon": "^3.0.1",
     "sequelize": "^6.35.1",
+    "socket.io": "^4.7.4",
     "sqlite3": "^5.1.6"
   }
 }
