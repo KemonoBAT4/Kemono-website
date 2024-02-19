@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+
+* {
+    margin: none;
+    text-decoration: none;
+}
+
+body {
+    background-color: black;
+}
+
+/* TEXT COLOR SET TO WHITE */
+
+h1, h2, h3, h4, h5, h6, p, span, a, li, ul {
+    color: white;
+}

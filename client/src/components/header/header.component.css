@@ -1,0 +1,42 @@
+
+/*
+##################
+# MAIN CONTAINER #
+##################
+*/
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.upper-side {
+    display: flex;
+    flex-direction: row;
+}
+
+.down-side {
+    display: flex;
+    flex-direction: row;
+}
+
+/*
+###################
+# LINK CONTAINERS #
+###################
+*/
+
+#redirect {
+
+}
+
+.home {
+
+}
+
+.news {
+
+}
+
+.media {
+    
+}
