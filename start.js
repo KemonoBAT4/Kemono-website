@@ -3,14 +3,6 @@ const express = require("express");
 
 const app = express();
 const { port } = require("./config");
-const cors = require("cors");
-const morgan = require("morgan");
-const { Sequelize } = require("sequelize");
-
-// chat data
-const http = require("http");
-const io = require("socket.io")(http);
-
 
 
 //const database_ready = false; 
@@ -18,19 +10,6 @@ const io = require("socket.io")(http);
 // Express Routes Import
 const pageRouter = require("./src/routes/router");
 
-const userApiRouter = require("./src/database/tables/users/routes");
-//const gameRoutes = require("./src/database/tables/games/routes");
-
-
-//const apiRouter = require("./src/routes/") //TODO: create the folder and finish this line
-
-// Sequelize model imports
-const UserModel = require("./src/database/models/User");
-const NewsModel = require("./src/database/models/News");
-const GameModel = require("./src/database/models/Game");
-
-app.use(morgan("tiny"));
-app.use(cors());
 
 // Middlewares
 app.use(express.json()); //TODO: see if this line is usefull
@@ -55,45 +34,11 @@ app.use("/middlewares", express.static(__dirname + "src/database/middlewares"));
 app.use("/controllers", express.static(__dirname + "src/database/controllers"))
 //app.use("/home", express.static(__dirname));
 
-// socket io usage chat
-io.on("connection", (socket) => {
-    console.log("A user connected");
-
-    socket.on("chat message", (msg) => {
-        io.emit("chat message", msg);
-    });
-
-    socket.on( "disconnect", () => {
-        console.log("A user disconnected");
-    });
-})
-
 // Ejs engine
 app.set("views", "./src/views/pages");
 app.set("view engine", "ejs");
 
+app.use("/", pageRouter);
 
-// Sequelize
-const sequelize = new Sequelize({
-    dialect: "sqlite",
-    storage: "./src/database/storage/data.db" //Path to the file that will store the SQLite DB
-});
-
-UserModel.initialise(sequelize);
-//NewsModel.initialise(sequelize);
-
-
-
-
-sequelize.sync().then(() => {
-    console.log("Sequelize Initialised!");
-
-    // Attacching Routes to the app
-    app.use("/api", userApiRouter);
-    app.use("/", pageRouter);
-    //app.use("/api", apiRouter); //TODO: add finish to create all the files and stuff for this and then remove the comment
-    app.listen(process.env.PORT || port,  () => console.log(`Listening on port ${port}`));
-}).catch((error) => {
-
-    console.error("Sequelize Initialisation threw an error: ", error);
-});
+//app.use("/api", apiRouter); //TODO: add finish to create all the files and stuff for this and then remove the comment
+app.listen(process.env.PORT || port,  () => console.log(`Listening on port ${port}`));
