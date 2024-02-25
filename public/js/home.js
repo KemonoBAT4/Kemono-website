@@ -121,11 +121,16 @@ async function load_chat_page(){
  * settings page
  */
 async function load_settings_page(){
-    locate_page("settings");
+    
+    //TODO: remove comments and alert
+    alert("la pagina non è ancora disponibile");
+    // locate_page("settings");
 }
 
 async function load_anime_page(){
-    locate_page("anime");
+    //TODO: remove comments and alert
+    alert("la pagina non è ancora disponibile");
+    // locate_page("anime");
 }
 
 /**
@@ -143,7 +148,7 @@ async function load_credits_page(){
  * redirects to the provided path 
  * @param {string} text the location path 
  */
- function locate_page(text) {
+function locate_page(text) {
 
     document.location = `/${text}`;
 }
