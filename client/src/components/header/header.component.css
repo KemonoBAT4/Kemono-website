@@ -4,9 +4,21 @@
 # MAIN CONTAINER #
 ##################
 */
+
+.main-container {
+    width: 90%;
+}
+
+.login-container {
+    width: 10%;
+    background-color: yellow;
+}
+
 .container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    background-color: red;
+
 }
 
 .upper-side {
@@ -17,6 +29,23 @@
 .down-side {
     display: flex;
     flex-direction: row;
+}
+
+/*
+##########
+# OTHERS #
+##########
+*/
+
+.logo-container {
+    background-color: green;
+}
+
+.img-logo {
+    width: 200px;
+    margin: 10px;
+    margin-left: 30px;
+    margin-right: 30px;
 }
 
 /*
@@ -39,4 +68,29 @@
 
 .media {
     
+}
+
+/*
+##########
+# COLORS #
+##########
+*/
+
+#color {
+    height: 4px;
+}
+
+.purple {
+    width: 20%;
+    background-color: rgb(240, 49, 240);
+}
+
+.yellow {
+    width: 20%;
+    background-color: yellow;
+}
+
+.green {
+    width: 60%;
+    background-color: lime;
 }
